@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Session prompts",
+    "description": "Maintain system prompts and tick them above the composer, per session."
+  }
+}

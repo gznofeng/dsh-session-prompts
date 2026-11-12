@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" aria-hidden="true">
+  <defs>
+    <linearGradient id="dsp-bg" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2b3446" />
+      <stop offset="1" stop-color="#171d29" />
+    </linearGradient>
+    <linearGradient id="dsp-check" x1="39" y1="45" x2="56" y2="30" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#34d399" />
+      <stop offset="1" stop-color="#7ce2b4" />
+    </linearGradient>
+  </defs>
+
+  <rect x="2" y="2" width="60" height="60" rx="15" fill="url(#dsp-bg)" />
+  <rect x="2.75" y="2.75" width="58.5" height="58.5" rx="14.25" fill="none" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1.5" />
+
+  <g stroke="#eef2f8" stroke-linecap="round" stroke-width="4">
+    <line x1="14" y1="19" x2="50" y2="19" stroke-opacity="0.95" />
+    <line x1="14" y1="28" x2="50" y2="28" stroke-opacity="0.7" />
+    <line x1="14" y1="37" x2="34" y2="37" stroke-opacity="0.45" />
+  </g>
+
+  <path d="M39 43 L44.5 48.5 L55 33.5" fill="none" stroke="url(#dsp-check)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
