@@ -1,0 +1,61 @@
+{
+  "name": "dsh-session-prompts",
+  "version": "0.1.0",
+  "description": "给 DSH 加一层「可临时挂上去的系统提示词」：配置页维护提示词，输入框上方按会话勾选注入，另配点击即填入草稿的快速提示词。",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gznofeng/dsh-session-prompts.git"
+  },
+  "keywords": [
+    "deepseek",
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "system-prompt",
+    "prompt",
+    "session",
+    "composer",
+    "zh",
+    "en"
+  ],
+  "icon": "icon.png",
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "lib",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "icon.png",
+    "PLUGIN.md",
+    "README.md",
+    "LICENSE"
+  ],
+  "peerDependencies": {
+    "@deepseek-ai/dsh-client-ui-settings": ">=0.0.1-rc.1 || >=0.1.0-rc.1 <0.3.0-0",
+    "@deepseek-ai/dsh-client-ui-slots": ">=0.0.1-rc.1 || >=0.1.0-rc.1 <0.3.0-0",
+    "@deepseek-ai/dsh-client-ui-conversation": ">=0.0.1-rc.1 || >=0.1.0-rc.1 <0.3.0-0",
+    "@deepseek-ai/dsh-client-locale": ">=0.0.1-rc.1 || >=0.1.0-rc.1 <0.3.0-0"
+  },
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-slots",
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-locale"
+      ]
+    }
+  }
+}

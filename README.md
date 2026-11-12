@@ -1,13 +1,20 @@
 # dsh-session-prompts
 
+[![dsh-plugin](https://img.shields.io/badge/dsh-plugin-blue)](https://github.com/topics/dsh-plugin)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+
 给 DSH 加一层「可临时挂上去的系统提示词」。在配置页维护一批提示词，在对话输入框上方按会话勾选，
-勾上的那些从下一次请求开始进入该会话的**系统提示词**。
+勾上的那些从下一次请求开始进入该会话的**系统提示词**。另有一类「快速提示词」：点击即把正文填入输入框草稿，不参与注入。
 
 <p align="center">
   <img src="docs/img/use.png" alt="对话输入框上方的勾选区" width="720">
 </p>
 
 在输入框上方勾选，勾上的提示词从下一次请求开始注入本会话的系统提示词——对话记录里不留痕迹。
+
+## 安装
+
+包内已声明 `dsh.bundle` manifest（`package.json` 的 `dsh.bundle.patch` + `cordis.patch.yml`），可通过 `dsh plugin add` 从仓库安装；也可以克隆本仓库后手动装入 profile（把目录放进 profile 的 `vendor/`，在 profile 的 `package.json` 里加一条 `file:` 依赖，安装依赖后重启）。
 
 ## 特性
 
@@ -249,9 +256,10 @@ rm "$DSH_HOME/plugin-data/dsh-session-prompts.json"
 无构建步骤，纯 ESM JavaScript。宿主侧是多文件模块；浏览器侧 `client.js` 是单文件自包含产物。
 
 ```
-cd dsh-session-prompts
 node --test 'test/*.test.js'
 ```
+
+插件界面的详细说明（面向使用者的完整文档）见 [PLUGIN.md](PLUGIN.md)；设计取舍与实现计划见 [docs/superpowers/](docs/superpowers/)。
 
 ## 许可
 
